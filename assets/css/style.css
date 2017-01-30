@@ -130,9 +130,8 @@ body {
   display: flex;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
-  -webkit-transform: translateX(0%);
-          transform: translateX(0%);
-  padding: 0px 10px 50px 10px; }
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%); }
   .content-wrap.tasks-active {
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%); }
@@ -155,8 +154,9 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   width: 50%;
-  margin: 0 auto; }
-  .task-items li {
+  margin: 0 auto;
+  overflow-x: hidden; }
+  .task-items .task-item {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -170,13 +170,39 @@ body {
     padding: 25px;
     position: relative;
     line-height: 20px; }
-    .task-items li .bar {
+    .task-items .task-item.completed .item-text {
+      text-decoration: line-through; }
+    .task-items .task-item.completed .bar {
+      background: #169F85; }
+    .task-items .task-item.completed .remove {
+      opacity: 1;
+      -webkit-transform: translateX(0px);
+              transform: translateX(0px); }
+    .task-items .task-item .flex-list-item {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      width: 100%; }
+    .task-items .task-item .remove {
+      color: #777;
+      opacity: 0;
+      -webkit-transition: all .4s ease-in-out;
+      transition: all .4s ease-in-out;
+      -webkit-transform: translateX(150%);
+              transform: translateX(150%);
+      cursor: pointer; }
+    .task-items .task-item .bar {
       display: inline-block;
-      background: red;
+      background: #CF6766;
       width: 7px;
       height: 100%;
       position: absolute;
-      left: 0; }
+      left: 0;
+      -webkit-transition: background .2s ease-in-out;
+      transition: background .2s ease-in-out; }
 
 @media (max-width: 1300px) {
   .form-wrap {

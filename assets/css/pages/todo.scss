@@ -78,8 +78,7 @@ body {
   width: 200%;
   display: flex;
   transition: all .3s ease-in-out;
-  transform: translateX(0%);
-  padding: 0px 10px 50px 10px;
+  transform: translateX(-50%);
 
   &.tasks-active {
     transform: translateX(-50%);
@@ -103,8 +102,9 @@ body {
   justify-content: center;
   width: 50%;
   margin: 0 auto;
+  overflow-x: hidden;
 
-  li {
+  .task-item {
     display: flex;
     align-items: center;
     color: #373737;
@@ -115,13 +115,43 @@ body {
     position: relative;
     line-height: 20px;
 
+    &.completed {
+      .item-text {
+        text-decoration: line-through;
+      }
+
+      .bar {
+        background: #169F85;
+      }
+
+      .remove {
+        opacity: 1;
+        transform: translateX(0px);
+      }
+    }
+
+    .flex-list-item {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .remove {
+      color: #777;
+      opacity: 0;
+      transition: all .4s ease-in-out;
+      transform: translateX(150%);
+      cursor: pointer;
+    }
+
     .bar {
       display: inline-block;
-      background: red;
+      background: #CF6766;
       width: 7px;
       height: 100%;
       position: absolute;
       left: 0;
+      transition: background .2s ease-in-out;
     }
   }
 }
