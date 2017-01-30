@@ -1,0 +1,203 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,600");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  font-family: 'Poppins', sans-serif; }
+
+body {
+  background-color: #2D3E50; }
+
+.main-wrap {
+  min-height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow-x: hidden; }
+
+.form-wrap {
+  width: 50%;
+  margin: 100px auto 100px; }
+  .form-wrap form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    .form-wrap form .submit {
+      background: #169F85;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      border: none;
+      margin-left: 5px;
+      color: #fff;
+      text-transform: uppercase;
+      text-decoration: none;
+      -webkit-transition: box-shadow .2s ease-in-out;
+      transition: box-shadow .2s ease-in-out;
+      width: 25%; }
+      .form-wrap form .submit:hover {
+        box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+        opacity: 1; }
+    .form-wrap form input {
+      height: 50px;
+      border: none;
+      font-size: 1.5rem;
+      padding: 0px 0px 0px 5px;
+      border: 1px solid #ccc;
+      color: #aaa;
+      width: 75%; }
+      .form-wrap form input:focus {
+        outline: none;
+        box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1); }
+  .form-wrap h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #e3e3e3; }
+
+.items-completed {
+  width: 50%;
+  font-size: 2rem;
+  color: #169F85; }
+  .items-completed h1 {
+    color: #e3e3e3;
+    margin-bottom: 20px; }
+
+.content-wrap {
+  width: 200%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  padding: 0px 10px 50px 10px; }
+  .content-wrap.tasks-active {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); }
+
+.task-wrap {
+  width: 50%; }
+  .task-wrap .current {
+    font-size: 1.7rem;
+    color: #e3e3e3;
+    margin-bottom: 50px;
+    font-weight: 300; }
+
+.task-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50%;
+  margin: 0 auto; }
+  .task-items li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: #373737;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 25px;
+    position: relative;
+    line-height: 20px; }
+    .task-items li .bar {
+      display: inline-block;
+      background: red;
+      width: 7px;
+      height: 100%;
+      position: absolute;
+      left: 0; }
+
+@media (max-width: 1300px) {
+  .form-wrap {
+    width: 80%; }
+  .task-items {
+    width: 80%; } }
+
+@media (max-width: 700px) {
+  .form-wrap {
+    width: 95%; }
+  .task-items {
+    width: 95%; } }
+
+@media (max-width: 500px) {
+  .form-wrap form {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    .form-wrap form .submit, .form-wrap form input {
+      -webkit-box-flex: 1;
+          -ms-flex: 1 1 100%;
+              flex: 1 1 100%; }
+    .form-wrap form .submit {
+      margin: 5px 0 0 0;
+      padding: 15px 0; } }
